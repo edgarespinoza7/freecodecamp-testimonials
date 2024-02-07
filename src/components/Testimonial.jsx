@@ -1,16 +1,19 @@
 import React from "react";
+import "../stylesheets/Testimonial.css";
 
-function Testimonial() {
+function Testimonial(props) {
   return (
-    <div className="4">
+    <div className="container-testimonial">
       <img className="img-testimonial"
-        src={require("../images/testimonial-jhon.jpg")}
-        alt="jhon profile pic"
-      />
+          src={require(`../images/testimonial-${props.imgName}.jpg`)}
+          alt="jhon profile pic"
+        />
+     
+
       <div className="container-text-testimonial">
-        <h2 className="name-testimonial">Jhon Boyega in Sudan</h2>
-        <p className="role-testimonial">Software Engineer at Spotify</p>
-        <p className="text-testimonial">"It's scary to change careers. I only gained the confidence that I could code by working through the hundreds of hours of free lessons on freeCodeCamp. Within a year I had a six-figure job as a software engineer. freeCodeCamp changed my life."</p>
+        <p className="name-testimonial"><strong>{props.name}</strong> in {props.country}</p>
+        <p className="role-testimonial">{props.role} at <strong>{props.company}</strong></p>
+        <p className="text-testimonial">{props.testimonial}</p>
       </div>
 
     </div>
